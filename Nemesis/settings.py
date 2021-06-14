@@ -25,7 +25,7 @@ SECRET_KEY = 'fwlc$txc8^$sg^pdf)1qygc$dd4ln5a_3-w263aeg!g9y4gcwe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -65,6 +65,9 @@ MIDDLEWARE = [
     # Coresheader middleware
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+
+    # whitenoise middleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Nemesis.urls'
@@ -144,3 +147,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import dj_database_url
+
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
