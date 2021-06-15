@@ -17,8 +17,8 @@ class CustomUser(AbstractUser):
         print(self.id)
         payload = {
             'id': self.id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=5),
-            'iat': datetime.datetime.utcnow()
+            'exp': datetime.datetime.now() + datetime.timedelta(minutes=5),
+            'iat': datetime.datetime.now()
         }
 
         token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
