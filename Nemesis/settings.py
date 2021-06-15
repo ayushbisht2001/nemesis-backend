@@ -100,9 +100,9 @@ WSGI_APPLICATION = 'Nemesis.wsgi.application'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
-        "http://localhost:3000", 
-    "https://nemesisapi.herokuapp.com/",
-     "http://nemesisapi.herokuapp.com/",
+    "http://localhost:3000", 
+    # "https://nemesisapi.herokuapp.com/",
+    #  "http://nemesisapi.herokuapp.com/",
 ]
 
 # Database
