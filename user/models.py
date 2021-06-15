@@ -10,6 +10,7 @@ import jwt, datetime
 
 class CustomUser(AbstractUser):
     address = models.TextField(blank=True, null=True)
+    
 
     @property
     def generate_jwt_token(self):
